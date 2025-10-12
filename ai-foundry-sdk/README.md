@@ -1,6 +1,6 @@
-# [Project Name]
+# AI Foundry SDK
 
-Brief description of what this mini-project does.
+AI Foundry SDK integration mini-project.
 
 ## Setup
 
@@ -18,10 +18,10 @@ poetry shell
 
 ```bash
 # From the root directory with Poetry environment activated
-python [project-folder]/src/main.py
+python ai-foundry-sdk/main.py
 
 # Or using poetry run from root
-poetry run python [project-folder]/src/main.py
+poetry run python ai-foundry-sdk/main.py
 ```
 
 ## Dependencies
@@ -37,10 +37,3 @@ This project's dependencies are listed in `requirements.txt`. To add new depende
    ```bash
    poetry add new-package
    ```
-
-## Testing
-
-```bash
-# From root directory with Poetry environment activated
-python -m pytest [project-folder]/tests/
-```

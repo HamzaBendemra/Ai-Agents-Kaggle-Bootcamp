@@ -2,31 +2,26 @@
 
 Python Notebooks - AdHoc Mini-Projects
 
-This repository contains multiple independent Python mini-projects, each in its own folder with separate dependencies managed by Poetry.
+This repository contains multiple independent Python mini-projects managed under a single Poetry environment.
 
 ## Structure
-
-Each folder in this repository represents a standalone mini-project with:
-- Its own `pyproject.toml` (Poetry configuration)
-- Its own virtual environment (managed by Poetry)
-- Independent dependencies
 
 ```
 Notebooks/
 ├── project-1/
-│   ├── pyproject.toml
-│   ├── poetry.lock
+│   ├── requirements.txt
 │   └── src/
 ├── project-2/
-│   ├── pyproject.toml
-│   ├── poetry.lock
+│   ├── requirements.txt
 │   └── src/
+├── pyproject.toml        # Single Poetry config for all projects
+├── poetry.lock           # Single lock file
 └── README.md
 ```
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 3.11.6 or higher
 - [Poetry](https://python-poetry.org/) - for dependency management
 
 ### Installing Poetry
@@ -39,6 +34,20 @@ curl -sSL https://install.python-poetry.org | python3 -
 pip install poetry
 ```
 
+## Initial Setup
+
+1. Clone the repository and install all dependencies:
+   ```bash
+   git clone <repository-url>
+   cd Notebooks
+   poetry install
+   ```
+
+2. Activate the shared virtual environment:
+   ```bash
+   poetry shell
+   ```
+
 ## Creating a New Mini-Project
 
 1. Create a new folder for your project:
@@ -47,67 +56,61 @@ pip install poetry
    cd my-new-project
    ```
 
-2. Initialize Poetry:
+2. Create a `requirements.txt` file listing your project's dependencies:
    ```bash
-   poetry init
-   ```
-   Follow the interactive prompts to set up your project.
-
-3. Add dependencies:
-   ```bash
-   poetry add <package-name>
+   echo "requests>=2.25.0" > requirements.txt
+   echo "pandas>=1.3.0" >> requirements.txt
    ```
 
-4. Install dependencies and create virtual environment:
+3. Install your project's dependencies to the shared environment:
    ```bash
-   poetry install
+   poetry add $(cat requirements.txt | tr '\n' ' ')
    ```
 
-## Working with a Project
+## Working with Projects
 
-### Activating the Virtual Environment
+### Using the Shared Virtual Environment
 
 ```bash
-cd your-project
+# Activate the shared environment (from root directory)
 poetry shell
+
+# Run any project
+python project-name/src/main.py
 ```
 
-### Running Python Scripts
+### Adding Dependencies for a Project
+
+1. Add the dependency to your project's `requirements.txt`:
+   ```bash
+   echo "numpy>=1.21.0" >> my-project/requirements.txt
+   ```
+
+2. Install it to the shared environment:
+   ```bash
+   poetry add numpy
+   ```
+
+### Managing Dependencies
 
 ```bash
-# Using poetry run
-poetry run python your_script.py
+# Install all dependencies from root
+poetry install
 
-# Or activate the shell first
-poetry shell
-python your_script.py
-```
+# Add a new dependency to shared environment
+poetry add <package-name>
 
-### Adding Dependencies
-
-```bash
-cd your-project
-poetry add numpy pandas matplotlib
-```
-
-### Adding Development Dependencies
-
-```bash
-poetry add --group dev pytest black flake8
-```
-
-### Updating Dependencies
-
-```bash
+# Update all dependencies
 poetry update
 ```
 
 ## Project Guidelines
 
-- Each mini-project should be self-contained
+- Each mini-project should have its own `requirements.txt` file
+- All projects share the same Poetry virtual environment
 - Include a README.md in each project folder explaining what it does
-- Commit `pyproject.toml` and `poetry.lock` to version control
-- Virtual environments (`.venv` folders) are ignored by git
+- Dependencies are managed at the repository level through Poetry
+- Project-specific requirements are documented in individual `requirements.txt` files
 
 ## License
 

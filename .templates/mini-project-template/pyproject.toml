@@ -1,17 +1,22 @@
-[tool.poetry]
+# This file is for reference only - the actual Poetry configuration
+# is managed at the repository root level.
+# 
+# Dependencies for this project should be listed in requirements.txt
+# and installed to the shared environment using:
+# poetry add <package-name>
+
+[project-info]
 name = "project-name"
 version = "0.1.0"
 description = "Description of your mini-project"
 authors = ["Your Name <your.email@example.com>"]
-readme = "README.md"
-packages = [{include = "src"}]
 
-[tool.poetry.dependencies]
-python = "^3.8"
+# Dependencies for this specific project (for reference)
+# Add these to requirements.txt instead
+dependencies = [
+    "python>=3.11.6"
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+dev-dependencies = [
+    "pytest>=7.0"
+]
