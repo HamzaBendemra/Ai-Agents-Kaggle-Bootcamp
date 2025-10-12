@@ -1,13 +1,11 @@
-# Notebooks
-
-Python Notebooks - AdHoc Mini-Projects
+# Mini-Projects
 
 This repository contains multiple independent Python mini-projects managed under a single Poetry environment.
 
 ## Structure
 
 ```
-Notebooks/
+Mini-Projects/
 ├── project-1/
 │   ├── requirements.txt
 │   └── src/
@@ -39,7 +37,7 @@ pip install poetry
 1. Clone the repository and install all dependencies:
    ```bash
    git clone <repository-url>
-   cd Notebooks
+   cd Mini-Projects
    poetry install
    ```
 
