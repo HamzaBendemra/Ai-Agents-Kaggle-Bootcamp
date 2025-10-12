@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "notebooks"
+name = "mini-projects"
 version = "0.1.0"
-description = "Python Notebooks - AdHoc Mini-Projects with shared Poetry environment"
+description = "AdHoc Mini-Projects with shared Poetry environment"
 authors = ["Hamza Bendemra <your.email@example.com>"]
 readme = "README.md"
 package-mode = false
