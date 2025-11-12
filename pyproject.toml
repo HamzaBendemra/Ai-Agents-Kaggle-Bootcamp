@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Kaggle's 5-Day Bootcamp about AI Agents"
 authors = ["Hamza Bendemra"]
 readme = "README.md"
-packages = [{include = "ai_agents_kaggle_bootcamp"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
