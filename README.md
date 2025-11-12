@@ -1,115 +1,138 @@
-# Mini-Projects
+# AI Agents Kaggle Bootcamp
 
-This repository contains multiple independent Python mini-projects managed under a single Poetry environment.
+A comprehensive 5-day bootcamp focused on building AI agents using modern tools and APIs including OpenAI, Google Gemini, and Kaggle.
 
-## Structure
+## 📚 Project Overview
+
+This repository contains materials, notebooks, and assignments for Kaggle's 5-Day AI Agents Bootcamp. Each day focuses on different aspects of AI agent development, from fundamentals to advanced implementations.
+
+## 🗂️ Project Structure
 
 ```
-Mini-Projects/
-├── project-1/
-│   ├── requirements.txt
-│   └── src/
-├── project-2/
-│   ├── requirements.txt
-│   └── src/
-├── pyproject.toml        # Single Poetry config for all projects
-├── poetry.lock           # Single lock file
-└── README.md
+Ai-Agents-Kaggle-Bootcamp/
+├── day-1/          # Day 1: Foundational Models & Prompt Engineering
+├── day-2/          # Day 2: Embeddings & Vector Databases
+├── day-3/          # Day 3: AI Agents
+├── day-4/          # Day 4: Domain-Specific Models
+├── day-5/          # Day 5: MLOps for Generative AI
+├── pyproject.toml  # Poetry project configuration
+├── README.md       # This file
+└── .gitignore      # Git ignore rules
 ```
 
-## Prerequisites
+## 🚀 Getting Started
 
-- Python 3.11.6 or higher
-- [Poetry](https://python-poetry.org/) - for dependency management
+### Prerequisites
 
-### Installing Poetry
+- Python 3.9 or higher
+- Poetry (for dependency management)
+- API Keys:
+  - OpenAI API key
+  - Google Gemini API key
+  - Kaggle API credentials
 
-```bash
-# Linux, macOS, Windows (WSL)
-curl -sSL https://install.python-poetry.org | python3 -
+### Installation
 
-# Alternative: using pip
-pip install poetry
-```
-
-## Initial Setup
-
-1. Clone the repository and install all dependencies:
+1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd Mini-Projects
+   git clone https://github.com/HamzaBendemra/Ai-Agents-Kaggle-Bootcamp.git
+   cd Ai-Agents-Kaggle-Bootcamp
+   ```
+
+2. **Install dependencies using Poetry**
+   ```bash
    poetry install
    ```
 
-2. Activate the shared virtual environment:
+3. **Activate the virtual environment**
    ```bash
    poetry shell
    ```
 
-## Creating a New Mini-Project
-
-1. Create a new folder for your project:
-   ```bash
-   mkdir my-new-project
-   cd my-new-project
+4. **Set up API keys**
+   Create a `.env` file in the project root:
+   ```env
+   OPENAI_API_KEY=your_openai_api_key_here
+   GOOGLE_API_KEY=your_google_api_key_here
+   KAGGLE_USERNAME=your_kaggle_username
+   KAGGLE_KEY=your_kaggle_key
    ```
 
-2. Create a `requirements.txt` file listing your project's dependencies:
+5. **Launch Jupyter Notebook**
    ```bash
-   echo "requests>=2.25.0" > requirements.txt
-   echo "pandas>=1.3.0" >> requirements.txt
+   jupyter notebook
    ```
 
-3. Install your project's dependencies to the shared environment:
-   ```bash
-   poetry add $(cat requirements.txt | tr '\n' ' ')
-   ```
+## 📦 Installed Libraries
 
-## Working with Projects
+- **Jupyter & Notebooks**: `jupyter`, `notebook`, `ipykernel`
+- **AI/ML APIs**: `openai`, `google-generativeai`
+- **Data Science**: `pandas`, `numpy`, `matplotlib`, `plotly`
+- **Utilities**: `python-dotenv`, `requests`, `aiohttp`
+- **Kaggle Integration**: `kaggle`
+- **Development Tools**: `black`, `pylint`, `ipywidgets`
 
-### Using the Shared Virtual Environment
+## 📅 Bootcamp Schedule
+
+### Day 1: Foundational Models & Prompt Engineering
+- Understanding large language models and their capabilities
+- Setting up development environment
+- Prompt engineering techniques and best practices
+- Working with OpenAI and Google Gemini APIs
+
+### Day 2: Embeddings & Vector Databases
+- Understanding embeddings and their applications
+- Working with text embeddings
+- Vector similarity and search
+- Introduction to vector databases
+
+### Day 3: AI Agents
+- Understanding AI agents and their architectures
+- Agent design patterns and frameworks
+- Tool integration and function calling
+- Building autonomous agents
+
+### Day 4: Domain-Specific Models
+- Fine-tuning models for specific domains
+- Transfer learning techniques
+- Model evaluation and optimization
+- Domain adaptation strategies
+
+### Day 5: MLOps for Generative AI
+- Production deployment strategies
+- Monitoring and logging best practices
+- Security and safety considerations
+- Scalability and performance optimization
+
+## 🛠️ Usage
+
+Each day's folder contains Jupyter notebooks with assignments and exercises. Navigate to the respective day's folder and open the notebook:
 
 ```bash
-# Activate the shared environment (from root directory)
-poetry shell
-
-# Run any project
-python project-name/src/main.py
+cd day-1
+jupyter notebook assignment.ipynb
 ```
 
-### Adding Dependencies for a Project
+## 📝 Notes
 
-1. Add the dependency to your project's `requirements.txt`:
-   ```bash
-   echo "numpy>=1.21.0" >> my-project/requirements.txt
-   ```
+- Make sure to activate the Poetry virtual environment before running any notebooks
+- Keep your API keys secure and never commit them to version control
+- Each day builds upon the previous day's concepts
 
-2. Install it to the shared environment:
-   ```bash
-   poetry add numpy
-   ```
+## 🤝 Contributing
 
-### Managing Dependencies
+Feel free to open issues or submit pull requests for improvements and corrections.
 
-```bash
-# Install all dependencies from root
-poetry install
+## 📄 License
 
-# Add a new dependency to shared environment
-poetry add <package-name>
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-# Update all dependencies
-poetry update
-```
+## 🙏 Acknowledgments
 
-## Project Guidelines
+- Kaggle for providing the bootcamp structure
+- OpenAI and Google for their AI APIs
+- The AI/ML community for continuous inspiration
 
-- Each mini-project should have its own `requirements.txt` file
-- All projects share the same Poetry virtual environment
-- Include a README.md in each project folder explaining what it does
-- Dependencies are managed at the repository level through Poetry
-- Project-specific requirements are documented in individual `requirements.txt` files
+---
 
-## License
-
-MIT License - See LICENSE file for details
+Happy Learning! 🚀
