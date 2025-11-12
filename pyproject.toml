@@ -1,37 +1,31 @@
 [tool.poetry]
-name = "mini-projects"
+name = "ai-agents-kaggle-bootcamp"
 version = "0.1.0"
-description = "AdHoc Mini-Projects with shared Poetry environment"
-authors = ["Hamza Bendemra <your.email@example.com>"]
+description = "Kaggle's 5-Day Bootcamp about AI Agents"
+authors = ["Hamza Bendemra"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.11.6"
-pandas = "^2.3.3"
-notebook = "^7.4.7"
-azure-ai-projects = "^1.0.0"
-azure-identity = "^1.25.1"
-python-dotenv = "^1.1.1"
-openai = "^2.3.0"
-streamlit = "^1.50.0"
+python = "^3.9"
+jupyter = "^1.0.0"
+notebook = "^7.0.0"
+ipykernel = "^6.25.0"
+openai = "^1.0.0"
+google-generativeai = "^0.3.0"
+kaggle = "^1.5.16"
+python-dotenv = "^1.0.0"
+pandas = "^2.0.0"
+numpy = "^1.24.0"
+requests = "^2.31.0"
+aiohttp = "^3.9.0"
+matplotlib = "^3.7.0"
+plotly = "^5.17.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.0"
+ipywidgets = "^8.1.0"
 black = "^23.0.0"
-flake8 = "^6.0.0"
-mypy = "^1.0.0"
+pylint = "^3.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.black]
-line-length = 88
-target-version = ['py311']
-
-[tool.mypy]
-python_version = "3.11"
-warn_return_any = true
-warn_unused_configs = true
-disallow_untyped_defs = true
